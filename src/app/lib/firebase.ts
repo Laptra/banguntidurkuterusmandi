@@ -3,12 +3,12 @@ import { getFirestore } from 'firebase/firestore';
 
 // isi konfigurasi sesuai dengan konfigurasi firebase kalian
 const firebaseConfig = {
-  apiKey: 'AIzaSyD1ghqKfecshWORn-Ap8YZ8k49HQduQSzE',
-  authDomain: 'atrilaptra.firebaseapp.com',
-  projectId: 'atrilaptra',
-  storageBucket: 'atrilaptra.firebasestorage.app',
-  messagingSenderId: '161592312636',
-  appId: '1:161592312636:web:42656a0365ecf5506cd439',
+  apiKey: "AIzaSyB5mdtMbEFVHc6nLpGsc-q6OJ8EQaD38oE",
+  authDomain: "todolist-e8873.firebaseapp.com",
+  projectId: "todolist-e8873",
+  storageBucket: "todolist-e8873.firebasestorage.app",
+  messagingSenderId: "342242132804",
+  appId: "1:342242132804:web:1997093d09ccb4cbaa8d11"
 };
 
 // Inisialisasi Firebase
