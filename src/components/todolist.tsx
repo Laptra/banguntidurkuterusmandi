@@ -235,13 +235,13 @@ export default function TodoList() {
           </button>
 
           <select
-          value={sortOption}
-          onChange={(e) => setSortOption(e.target.value as SortOption)}
-          className="bg-gray-700 text-white px-4 py-2 rounded-lg"
-        >
-          <option value="abjad-asc">Sort by name</option>
-          <option value="time-asc">Sort by time</option>
-        </select>
+            value={sortOption}
+            onChange={(e) => setSortOption(e.target.value as SortOption)}
+            className="bg-gray-700 text-white px-4 py-2 rounded-lg"
+          >
+            <option value="abjad-asc">Sort by name</option>
+            <option value="time-asc">Sort by time</option>
+          </select>
         </div>
 
         <ul className="space-y-4">
@@ -253,8 +253,8 @@ export default function TodoList() {
               const rowColor = task.completed
                 ? "bg-green-700 border-green-400"
                 : isExpired
-                ? "bg-red-800 border-red-500"
-                : "bg-yellow-600 border-yellow-400";
+                  ? "bg-red-800 border-red-500"
+                  : "bg-yellow-600 border-yellow-400";
 
               return (
                 <motion.li
@@ -273,11 +273,10 @@ export default function TodoList() {
                       className="form-checkbox h-5 w-5 text-green-400"
                     />
                     <span
-                      className={`truncate max-w-[180px] ${
-                        task.completed
+                      className={`truncate max-w-[180px] ${task.completed
                           ? "line-through text-gray-400"
                           : "text-white"
-                      }`}
+                        }`}
                       title={task.text}
                     >
                       {task.text}
@@ -286,7 +285,17 @@ export default function TodoList() {
                   <div className="text-sm">
                     {new Date(task.deadline).toLocaleDateString()}
                   </div>
-                  <div className="text-sm">{timeLeft}</div>
+                  <div
+                    className={`${task.completed
+                        ? "text-green-600 font-semibold"
+                        : timeLeft === "waktu habis"
+                          ? "text-red-600 font-semibold"
+                          : ""
+                      }`}
+                  >
+                    {task.completed ? "selesai" : timeLeft}
+                  </div>
+
                   <div className="col-span-2 flex justify-end gap-2">
                     <button
                       onClick={() => editTask(task)}
